@@ -1,0 +1,167 @@
+/* =====================================================
+   Interview Module Styles (questions, mock interview chat)
+   ===================================================== */
+
+.category-picker {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+}
+
+@media (max-width: 760px) {
+    .category-picker { grid-template-columns: repeat(2, 1fr); }
+}
+
+.category-chip {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--color-surface-alt);
+    transition: border-color var(--transition-base), background-color var(--transition-base);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+}
+
+.category-chip:hover {
+    border-color: var(--color-accent);
+}
+
+.category-chip.selected {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent-dark);
+}
+
+.question-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    margin-bottom: var(--space-4);
+}
+
+.question-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-3);
+}
+
+.question-number {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-accent-dark);
+}
+
+.question-text {
+    font-size: 1rem;
+    color: var(--color-ink);
+    margin-bottom: var(--space-4);
+}
+
+/* ---- Mock interview chat ---- */
+
+.chat-shell {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 200px);
+    min-height: 480px;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.chat-bubble {
+    max-width: 75%;
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-lg);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.chat-bubble.interviewer {
+    align-self: flex-start;
+    background-color: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-ink-soft);
+    border-bottom-left-radius: var(--radius-sm);
+}
+
+.chat-bubble.candidate {
+    align-self: flex-end;
+    background-color: var(--color-ink);
+    color: var(--color-surface-alt);
+    border-bottom-right-radius: var(--radius-sm);
+}
+
+[data-theme="dark"] .chat-bubble.candidate {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+}
+
+.chat-bubble-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.65;
+    margin-bottom: var(--space-2);
+    font-weight: 600;
+}
+
+.evaluation-card {
+    align-self: flex-start;
+    max-width: 85%;
+    background-color: var(--color-accent-soft);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+}
+
+.evaluation-scores {
+    display: flex;
+    gap: var(--space-5);
+    margin: var(--space-3) 0;
+}
+
+.evaluation-score-item {
+    text-align: center;
+}
+
+.evaluation-score-number {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-accent-dark);
+}
+
+.evaluation-score-label {
+    font-size: 0.72rem;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.chat-input-bar {
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-surface-alt);
+}
+
+.chat-input-bar textarea {
+    flex: 1;
+    resize: none;
+    min-height: 48px;
+    max-height: 140px;
+}

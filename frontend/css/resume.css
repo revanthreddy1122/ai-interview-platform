@@ -1,0 +1,131 @@
+/* =====================================================
+   Resume Module Styles (upload, analysis, history)
+   ===================================================== */
+
+.dropzone {
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+    cursor: pointer;
+    transition: border-color var(--transition-base), background-color var(--transition-base);
+    background-color: var(--color-surface-alt);
+}
+
+.dropzone:hover,
+.dropzone.dragover {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-soft);
+}
+
+.dropzone-icon {
+    font-size: 2.4rem;
+    margin-bottom: var(--space-3);
+    color: var(--color-accent-dark);
+}
+
+.dropzone-filename {
+    margin-top: var(--space-4);
+    font-weight: 600;
+    color: var(--color-ink);
+    display: none;
+}
+
+.dropzone-filename.visible {
+    display: block;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-6);
+}
+
+@media (max-width: 900px) {
+    .analysis-grid { grid-template-columns: 1fr; }
+}
+
+.analysis-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.analysis-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9rem;
+    color: var(--color-ink-soft);
+}
+
+.analysis-list li:last-child {
+    border-bottom: none;
+}
+
+.analysis-list-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 1px;
+}
+
+.analysis-list-icon.strength { background-color: var(--color-success-soft); color: var(--color-success); }
+.analysis-list-icon.weakness { background-color: var(--color-danger-soft); color: var(--color-danger); }
+.analysis-list-icon.suggestion { background-color: var(--color-accent-soft); color: var(--color-accent-dark); }
+
+.resume-history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+    transition: box-shadow var(--transition-base);
+}
+
+.resume-history-item:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.resume-history-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.resume-history-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent-dark);
+    flex-shrink: 0;
+}
+
+.match-percentage-bar {
+    height: 10px;
+    border-radius: 999px;
+    background-color: var(--color-border);
+    overflow: hidden;
+    margin: var(--space-3) 0;
+}
+
+.match-percentage-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent));
+    border-radius: 999px;
+    transition: width 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
