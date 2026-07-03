@@ -3,7 +3,7 @@
    Handles base URL, JWT attachment, and response parsing
    ===================================================== */
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'https://ai-interview-platform-nly2.onrender.com/api';
 const TOKEN_KEY = 'interview_platform_token';
 const USER_KEY = 'interview_platform_user';
 
